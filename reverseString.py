@@ -4,12 +4,7 @@ text = input()
 textArray = list(text)
 textLength = len(textArray)
 
-newText = [None] * textLength
-
 for i in range(round(textLength / 2)):
-    newText[textLength - i - 1] = textArray[i]
-    newText[i] = textArray[textLength - i - 1]
-    if (textLength % 2) != 0:
-        newText[round(textLength / 2)] = textArray[round(textLength / 2)]
+    textArray[i], textArray[textLength - i - 1] = textArray[textLength - i - 1], textArray[i]
 
-print("Result : " + ''.join(newText))
+print("Result : " + ''.join(textArray))
